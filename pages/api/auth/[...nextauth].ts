@@ -29,8 +29,8 @@ export default NextAuth({
             email,
           },
         });
-
-        if (!user) return;
+        console.log(user);
+        if (!user) return undefined;
 
         const { host } = new URL(url);
         const transport = nodemailer.createTransport(server);
