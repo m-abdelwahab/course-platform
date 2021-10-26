@@ -6,8 +6,8 @@ const CheckYourEmail = () => {
       <h1>Check your email!</h1>
 
       <p>
-        A login link has been sent to your email! Use it and you&apos;ll be able
-        to access the content 🚀
+        If you bought the course, a login link will been sent to your email! Use
+        it and you&apos;ll be able to access the content 🚀
       </p>
     </div>
   );
