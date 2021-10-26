@@ -44,6 +44,11 @@ export default NextAuth({
       },
     }),
   ],
+  pages: {
+    signIn: '/login',
+    error: '/error',
+    verifyRequest: '/check-your-email',
+  },
 });
 
 // Email HTML body
