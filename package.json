@@ -11,16 +11,22 @@
   "dependencies": {
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.5",
+    "@next-auth/prisma-adapter": "^0.5.2-next.19",
+    "@prisma/client": "^3.3.0",
     "gray-matter": "^4.0.3",
     "next": "11.1.2",
+    "next-auth": "^4.0.0-beta.4",
     "next-mdx-remote": "^3.0.6",
+    "nodemailer": "^6.7.0",
     "prism-react-renderer": "^1.2.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.17.5"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "^0.4.1",
+    "@types/nodemailer": "^6.4.4",
     "@types/react": "17.0.32",
     "autoprefixer": "^10.3.7",
     "eslint": "7.32.0",

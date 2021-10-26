@@ -1,11 +1,13 @@
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-
+import { useSession, signOut } from 'next-auth/react';
 import Link from 'next/link';
 
 const navigation = [{ name: 'Blog', href: '/blog' }];
 
 export const Navbar = () => {
+  const { data: session, status } = useSession();
+
   return (
     <Disclosure as="nav">
       {({ open }) => (
@@ -62,19 +64,37 @@ export const Navbar = () => {
                         </a>
                       </Link>
                     ))}
-
-                    <Link href="/course">
-                      <a className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 hover:text-white">
-                        Course
-                      </a>
-                    </Link>
+                    {status === 'authenticated' ? (
+                      <Link href="/course/lessons">
+                        <a className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 hover:text-white">
+                          Lessons
+                        </a>
+                      </Link>
+                    ) : (
+                      <Link href="/course">
+                        <a className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 hover:text-white">
+                          Course
+                        </a>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <Link href="/login">
-                  <a> Log in</a>
-                </Link>
+                {/* Profile dropdown */}
+                {status === 'authenticated' ? (
+                  <a
+                    href="#"
+                    className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 hover:text-white"
+                    onClick={() => signOut()}
+                  >
+                    Log out
+                  </a>
+                ) : (
+                  <Link href="/login">
+                    <a> Log in</a>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -88,12 +108,21 @@ export const Navbar = () => {
                   </a>
                 </Link>
               ))}
-              (
-              <Link href="/course">
-                <a className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-white">
-                  Course
-                </a>
-              </Link>
+              {status === 'authenticated' ? (
+                <div>
+                  <Link href="/course/lessons">
+                    <a className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-white">
+                      Lessons
+                    </a>
+                  </Link>
+                </div>
+              ) : (
+                <Link href="/course">
+                  <a className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-white">
+                    Course
+                  </a>
+                </Link>
+              )}
             </div>
           </Disclosure.Panel>
         </>
