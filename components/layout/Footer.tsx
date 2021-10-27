@@ -32,7 +32,7 @@ export const Footer = () => {
           <a href="https://twitter.com/m-abdelwahab">Mahmoud Abdelwahab</a> -{' '}
           <a
             className="underline"
-            href="https://github.com/m-abdelwahab/course-platform-template"
+            href="https://github.com/m-abdelwahab/course-platform"
           >
             code
           </a>
