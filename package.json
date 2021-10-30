@@ -13,6 +13,7 @@
     "@heroicons/react": "^1.0.5",
     "@next-auth/prisma-adapter": "^0.5.2-next.19",
     "@prisma/client": "^3.3.0",
+    "@sentry/nextjs": "^6.13.3",
     "gray-matter": "^4.0.3",
     "micro": "^9.3.4",
     "next": "11.1.2",
