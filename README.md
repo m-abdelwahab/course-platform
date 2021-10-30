@@ -48,6 +48,8 @@ npm run dev
 
 This will install the project and start a local development server at [`localhost:3000`](http://localhost:3000).
 
+> ⚠️ Make sure you've nodejs version ^12.19.0 or ^14.15.0 or ^16.13.0", cause those are the only versions supported by next-auth@beta otherwise you'll get ```"next-auth/react" module not found``` error when you run the app
+
 > ❗️ Make sure your rename the `.env.example` to `.env`
 ### Setting up the database
 
