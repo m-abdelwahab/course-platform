@@ -51,7 +51,7 @@ const ErrorComponent = () => {
 export default function LessonPage() {
   const router = useRouter();
 
-  const lesson = router.asPath.split('/')[2];
+  const { lesson } = router.query;
   const { data, error } = useSWR<LessonResponse>(
     `${process.env.NEXT_PUBLIC_SERVER_URL}/api/lessons/${lesson}`,
     fetcher,
